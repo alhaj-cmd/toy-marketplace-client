@@ -2,12 +2,48 @@
 import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import img from '../../assets/login/pic.avif'
+import { useContext } from 'react';
+import { AuthContext } from '../AuthProvider/AuthProvider';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../Firebase/Firebase.config';
 
 
 
 
 const Login = () => {
 
+  const auth = getAuth(app);
+const Googleprovider = new GoogleAuthProvider();
+
+  const {signIn} = useContext(AuthContext);
+  const handleLogin = event =>{
+    event.preventDefault();
+    const form = event.target;
+
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log( email, password);
+    signIn(email, password)
+    .then(result => {
+      const user = result.user;
+      console.log(user);
+    })
+    .catch(error => console.log(error));
+   
+  }
+
+  // google sign in
+  const handleGoogleSignIn = () => {
+    // console.log('hello')
+    signInWithPopup(auth, Googleprovider)
+      .then(res => {
+        const user = res.user;
+        console.log(user);
+      })
+      .catch(error => {
+        console.log('error', error.message)
+      })
+  }
 
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -20,18 +56,18 @@ const Login = () => {
 
           <div className="card-body">
             <h1 className="text-3xl text-center font-bold">Login now!</h1>
-            <form  >
+            <form  onSubmit={handleLogin}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
-                <input type="text" placeholder="email" name='email' className="input input-bordered" />
+                <input type="email" placeholder="email" name='email' className="input input-bordered" />
               </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input type="text" placeholder="password" name='password' className="input input-bordered" />
+                <input type="password" placeholder="password" name='password' className="input input-bordered" />
 
               </div>
               <div className="form-control mt-6">
@@ -42,7 +78,7 @@ const Login = () => {
             <p className='my-4 text-center'>New to SCIENCE KITS !! <Link className='text-orange-600 font-bold' to='/register'>Register</Link></p>
 
             <div className=" mt-3 text-center">
-              <button className="btn btn-circle btn-outline " >
+              <button onClick={handleGoogleSignIn} className="btn btn-circle btn-outline " >
                 <FaGoogle className='text-orange-500' />
               </button>
 
