@@ -6,6 +6,7 @@ import About from './About';
 import AboutUs from './AboutUs';
 import Gellary from './Gellary';
 import Progress from './Progress';
+import Tabex from './Tabex';
 
 
 const Header = () => {
@@ -63,8 +64,12 @@ const Header = () => {
                 </div>
 
             </div>
+          
             <div>
                 <Gellary></Gellary>
+            </div>
+            <div>
+                <Tabex></Tabex>
             </div>
             <div>
                 <About></About>
