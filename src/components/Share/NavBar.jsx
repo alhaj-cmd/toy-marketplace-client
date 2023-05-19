@@ -32,12 +32,12 @@ const NavBar = () => {
         <ul className="menu menu-horizontal px-1">
           <li> <Link>Home</Link>
 
-            <Link>Add a Toy</Link>
+            <Link to='/addtoy'>Add a Toy</Link>
             <Link to='/blogs'>Blogs</Link>
 
             {user?.email ?
               <>
-                <Link>All Toys</Link>
+                <Link to="/alltoy">All Toys</Link>
                 <Link>My Toys</Link>
                 <button className="text-primary" onClick={handleLogOut}>log out</button>
               </> : <Link to='/login' className="text-primary">Log In</Link>
@@ -45,7 +45,7 @@ const NavBar = () => {
           </li>
         </ul>
       </div>
-      {user?.email ? <div className="navbar-end">
+      {user? <div className="navbar-end">
 
         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
           <div className="w-10 text-primary rounded-full">
