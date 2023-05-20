@@ -15,27 +15,27 @@ const Gellary = () => {
             <h2 className='text-3xl text-center font-bold py-2'> Gallery Science <span className='text-orange-500'> Fair</span></h2>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
                 <div className="card w-96 bg-base-100 shadow-xl">
-                    <figure className='hover:-translate-y-6'><img src={science1} className='rounded-md p-2' alt="science kits" /></figure>
+                    <figure className='hover:-translate-y-6'><img src={science1} className='rounded-2xl p-2' alt="science kits" /></figure>
 
                 </div>
                 <div className="card w-96 bg-base-100   shadow-xl">
-                    <figure className='hover:translate-y-6'><img src={science2} className='rounded-md p-2' alt="science kits" /></figure>
+                    <figure className='hover:translate-y-6'><img src={science2} className='rounded-2xl p-2' alt="science kits" /></figure>
 
                 </div>
                 <div className="card w-96 bg-base-100 shadow-xl">
-                    <figure className='hover:-translate-y-6'><img src={science3} className='rounded-md p-2' alt="science kits" /></figure>
+                    <figure className='hover:-translate-y-6'><img src={science3} className='rounded-2xl p-2' alt="science kits" /></figure>
 
                 </div>
                 <div className="card w-96 bg-base-100 shadow-xl">
-                    <figure className='hover:translate-x-6'><img src={science4} className='rounded-md p-2' alt="science kits" /></figure>
+                    <figure className='hover:translate-x-6'><img src={science4} className='rounded-2xl p-2' alt="science kits" /></figure>
 
                 </div>
                 <div className="card w-96 bg-base-100 shadow-xl">
-                    <figure className='hover:-translate-y-6'><img src={science5} className='rounded-md p-2' alt="science kits" /></figure>
+                    <figure className='hover:-translate-y-6'><img src={science5} className='rounded-2xl p-2' alt="science kits" /></figure>
 
                 </div>
                 <div className="card w-96 bg-base-100 shadow-xl">
-                    <figure className='hover:translate-x-6'><img src={science6} className='rounded-md p-2' alt="science kits" /></figure>
+                    <figure className='hover:translate-x-6'><img src={science6} className='rounded-2xl p-2' alt="science kits" /></figure>
 
                 </div>
                 <div className="card w-96 bg-base-100 shadow-xl">
