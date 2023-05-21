@@ -1,7 +1,9 @@
 // import React from 'react';
 
-const MyToysData = ({category, index}) => {
-    const {name, subCategory, price, quantity} = category;
+import { Link } from "react-router-dom";
+
+const MyToysData = ({category, index, handleDelete, handleCategoryEdit}) => {
+    const {name, _id, subCategory, price, quantity} = category;
     return (
       
            <tr>
@@ -11,11 +13,12 @@ const MyToysData = ({category, index}) => {
             <td>{price}</td>
             <td>{quantity}</td>
             <td>
-                {/* <button className="btn btn-success">Edit</button> */}
-                <label htmlFor="my-modal" className="btn btn-success">Edit</label>
+                {/* {status === 'confirm' ? <Link>Update</Link> : <button onClick={() => handleCategoryEdit(_id)}  className="btn btn-success">Edit</button>} */}
+                <Link to='/addtoy'><button onClick={() => handleCategoryEdit(_id)}  className="btn btn-success">Edit</button></Link>
+               
             </td>
             <td>
-                <button className="btn btn-warning">Delete</button>
+                <button onClick={() => handleDelete(_id)} className="btn btn-warning">Delete</button>
             </td>
           </tr>
        
