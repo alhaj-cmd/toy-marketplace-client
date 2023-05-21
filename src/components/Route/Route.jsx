@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       {
         path:'alltoy',
         element:<AllToy></AllToy>,
-        loader: () => fetch('http://localhost:5000/allCategory')
+        loader: () => fetch('https://toy-marketplace-server-murex.vercel.app/allCategory')
       },
       {
         path:'addtoy',
