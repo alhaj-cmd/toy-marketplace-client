@@ -49,7 +49,8 @@ const router = createBrowserRouter([
       },
       {
         path:'toyDetails/:id',
-        element:<ToyDetails></ToyDetails>
+        element:<ToyDetails></ToyDetails>,
+        loader:({params}) => fetch(`https://toy-marketplace-server-murex.vercel.app/allCategory/${params.id}`)
       }
     ]
   },

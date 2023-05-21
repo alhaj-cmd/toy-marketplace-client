@@ -20,7 +20,7 @@ const AllToy = () => {
     </button>
   </div>
 </div>
-<h2>Seller Name : {user?.displayName}</h2>
+<h2 className="text-center text-3xl bg-success">Seller Name : {user?.displayName}</h2>
             <div className="overflow-x-auto my-6">
   <table className="table table-zebra w-full">
     {/* head */}
