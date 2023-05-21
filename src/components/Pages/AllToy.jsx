@@ -1,11 +1,17 @@
 import { useLoaderData } from "react-router-dom";
+import AllToyTabs from "./AllToyTabs";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const AllToy = () => {
+  const {user} = useContext(AuthContext);
+  console.log(user)
   const allCategories = useLoaderData()
     return (
-        <div className="px-4">
-          <h2 className="text-3xl">{allCategories.length}</h2>
+       <div>
+             <div className="px-4">
+          <h2 className="text-3xl">{}</h2>
             <div className="form-control my-12">
   <div className="input-group">
     <input type="text" placeholder="Toy Name" className="input input-bordered" />
@@ -14,11 +20,13 @@ const AllToy = () => {
     </button>
   </div>
 </div>
+<h2>Seller Name : {user?.displayName}</h2>
             <div className="overflow-x-auto my-6">
   <table className="table table-zebra w-full">
     {/* head */}
     <thead>
       <tr>
+        <th>No.</th>
         <th>Toy Name</th>
         <th>Sub-Category</th>
         <th>Price</th>
@@ -27,19 +35,20 @@ const AllToy = () => {
       </tr>
     </thead>
     <tbody>
-      {/* row 1 */}
-      <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>Quality Control Specialist</td>
-        <td>Blue</td>
-        <td>Blue</td>
-      </tr>
+    {
+          allCategories.map((allCategori, index) => <AllToyTabs
+          key={allCategori._id}
+          allCategori={allCategori}
+          index ={index}
+          ></AllToyTabs>)
+        }
    
     </tbody>
   </table>
 </div>
         </div>
+       
+       </div>
     );
 };
 
