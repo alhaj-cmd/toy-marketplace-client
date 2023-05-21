@@ -1,8 +1,11 @@
+import { useLoaderData } from "react-router-dom";
 
 
 const AllToy = () => {
+  const allCategories = useLoaderData()
     return (
         <div className="px-4">
+          <h2 className="text-3xl">{allCategories.length}</h2>
             <div className="form-control my-12">
   <div className="input-group">
     <input type="text" placeholder="Toy Name" className="input input-bordered" />
