@@ -11,12 +11,12 @@ const AllToy = () => {
   const { user } = useContext(AuthContext);
   // console.log(user)
   const allCategories = useLoaderData()
-
+const [allToys, setToys] = useState(allCategories)
 
  const handleSearch =  () => {
   fetch(`http://localhost:5000/searchToyname/${searchText}`)
   .then(res => res.json())
-  .then(data => console.log(data))
+  .then(data => setToys(data))
  }
 
   return (
@@ -47,7 +47,7 @@ const AllToy = () => {
             </thead>
             <tbody>
               {
-                allCategories.map((allCategori, index) => <AllToyTabs
+                allToys.map((allCategori, index) => <AllToyTabs
                   key={allCategori._id}
                   allCategori={allCategori}
                   index={index}
