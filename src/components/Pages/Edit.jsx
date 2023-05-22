@@ -7,15 +7,15 @@ const Edit = () => {
     const updateLoader = useLoaderData();
     console.log(updateLoader);
 
-    const {_id, description, price,  } = updateLoader;
+    const {_id, description, price, subCategory } = updateLoader;
 
     const handleUpdate = (event) => {
         event.preventDefault()
         const form = event.target
         const price = form.price.value;
         const description = form.description.value;
-        const category = form.category.value;
-        const update = {price, description, category} 
+        const subCategory = form.subCategory.value;
+        const update = {price, description, subCategory} 
         console.log(update);
 
         fetch(`https://toy-marketplace-server-murex.vercel.app/myToys/${_id}`,{
@@ -45,7 +45,7 @@ const Edit = () => {
                 <h1>Description</h1>
                 <input type="text" className="border p-2 w-full rounded-md" name="description" defaultValue={description} placeholder="type your description" /> <br />
                 <h1>Category</h1>
-                <input type="text" className="border p-2 w-full rounded-md" defaultValue={category} name="category" placeholder="type your category" /> <br />
+                <input type="text" className="border p-2 w-full rounded-md" defaultValue={subCategory} name="subCategory" placeholder="type your category" /> <br />
                <div className=" text-center">
                <input type="submit" className="btn btn-block uppercase btn-primary " value="update" />
                </div>
