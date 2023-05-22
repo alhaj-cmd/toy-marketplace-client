@@ -34,28 +34,6 @@ const MyToys = () => {
     }
   }
 
-  // Update
-  const handleCategoryEdit = id => {
-    fetch(`https://toy-marketplace-server-murex.vercel.app/myToys/${id}`, {
-      method: 'PATCH',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify({ status: "confirm" })
-    })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        if (data.modifiedCount > 0) {
-          // update state
-          const remaining = toyCategory.filter(toyupdate => toyupdate._id !== id)
-          const updated = toyCategory.find(toyupdate => toyupdate._id == id)
-          updated.status = 'confirm'
-          const newCategory = [updated, ...remaining]
-          setToyCategory(newCategory);
-        }
-      })
-  }
 
   return (
     <div>
@@ -81,7 +59,6 @@ const MyToys = () => {
                 category={category}
                 index={index}
                 handleDelete={handleDelete}
-                handleCategoryEdit={handleCategoryEdit}
               ></MyToysData>)
             }
 

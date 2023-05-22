@@ -10,19 +10,19 @@ const AddToy = () => {
     const onSubmit = (data) => {
         // alert(JSON.stringify(data));
         fetch("https://toy-marketplace-server-murex.vercel.app/postToy", {
-            method:"POST",
-            headers:{'content-type': 'application/json'},
-            body:JSON.stringify(data)
+            method: "POST",
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(data)
         })
-        .then((res) => res.json() )
-        .then((result) => {
-            console.log(result);
-        })
+            .then((res) => res.json())
+            .then((result) => {
+                console.log(result);
+            })
         console.log(watch(data));
     }
 
     return (
-        <div className='w-full  py-12 '>
+        <div className='w-full lg:px-32  py-12 '>
             <form className='bg-indigo-400 shadow-md rounded px-8 pt-6 pb-8 mb-4' onSubmit={handleSubmit(onSubmit)}>
                 {errors.exampleRequired && <span className='text-red-500'>This field is required</span>}
                 <div>

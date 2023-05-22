@@ -12,14 +12,14 @@ import Tabex from './Tabex';
 const Header = () => {
     return (
         <div className='px-2'>
-            <div className="carousel my-6 w-full  ">
+            <div className="carousel h-96 my-6 w-full  ">
                 <div id="slide1" className="carousel-item  relative w-full">
                     <img src={education} className=" w-full" />
                     <div className="absolute flex justify-between sm:mt-4 transform -translate-y-1/3 left-5 right-5 top-1/2">
 
                         <a href="#slide4" className="btn bg-orange-500 btn-circle">❮</a>
                         <div className='text-gray-300 bg-opacity-70  font-bold'>
-                            <h1 className="mb-4 ">Hello <span className='text-4xl text-orange-500'>Science Kits</span></h1>
+                            <h1 className="mb-4 ">Hello <span className='text-6xl text-orange-500'>Science Kits</span></h1>
                             <p>Find Every Think for your Educational and Learning Toys</p>
                             <button></button>
                         </div>

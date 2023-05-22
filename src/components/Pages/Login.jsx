@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../Firebase/Firebase.config';
+import toast from 'react-hot-toast';
 
 
 
@@ -13,25 +14,26 @@ import app from '../Firebase/Firebase.config';
 const Login = () => {
 
   const auth = getAuth(app);
-const Googleprovider = new GoogleAuthProvider();
+  const Googleprovider = new GoogleAuthProvider();
 
-  const {signIn} = useContext(AuthContext);
-  const handleLogin = event =>{
+  const { signIn } = useContext(AuthContext);
+  const handleLogin = event => {
     event.preventDefault();
     const form = event.target;
 
     const email = form.email.value;
     const password = form.password.value;
-    console.log( email, password);
+    console.log(email, password);
     signIn(email, password)
-    .then(result => {
-      const user = result.user;
-      console.log(user);
-      form.reset();
-      
-    })
-    .catch(error => console.log(error));
-   
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+        toast.success('congratulations')
+        form.reset();
+
+      })
+      .catch(error => console.log(error));
+
   }
 
   // google sign in
@@ -58,7 +60,7 @@ const Googleprovider = new GoogleAuthProvider();
 
           <div className="card-body">
             <h1 className="text-3xl text-center font-bold">Login now!</h1>
-            <form  onSubmit={handleLogin}>
+            <form onSubmit={handleLogin}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>

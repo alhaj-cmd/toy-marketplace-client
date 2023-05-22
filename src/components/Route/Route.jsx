@@ -10,6 +10,7 @@ import AddToy from "../Pages/AddToy";
 import MyToys from "../Pages/MyToys";
 import ToyDetails from "../Pages/ToyDetails";
 import PrivetRoute from "./PrivetRoute";
+import Edit from "../Pages/Edit";
 
 
 const router = createBrowserRouter([
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
       {
         path: 'blogs',
         element: <Blogs></Blogs>
+      },
+      {
+        path:'edit/:id',
+        element:<Edit></Edit>,
+        loader:({params}) => fetch(`https://toy-marketplace-server-murex.vercel.app/allCategory/${params.id}`)
       },
       {
         path:'toyDetails/:id',

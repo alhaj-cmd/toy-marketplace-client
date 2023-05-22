@@ -14,8 +14,7 @@ const Tabex = () => {
       .then(data => setCategory(data))
   }, [active])
 
-  // const result =categories?.filter(category => category.subCategory == active);
-  // console.log(result);
+
   const handleTab = (tabClick) => {
     setActive(tabClick);
   }
@@ -37,12 +36,12 @@ const Tabex = () => {
           {/* Language Toys */}
           <Tab onClick={() => handleTab("Language Toys")}><span className={`${active == "Language Toys" ? " text-orange-500" : ""
             }`}>Language Toys</span></Tab>
-            {/* science toys */}
+          {/* science toys */}
           <Tab onClick={() => handleTab("Science Toys")}><span className={`${active == "Science Toys" ? " text-orange-500" : ""
             }`}>Science Toys</span></Tab>
         </TabList>
       </Tabs>
-      <div className='grid grid-cols-1 md:grid-cols-2 py-4 gap-4'>
+      <div className='grid grid-cols-1 md:grid-cols-2 my-10 lg:ml-16 gap-4'>
 
 
         {

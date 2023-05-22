@@ -10,7 +10,7 @@ const AllToyTabs = ({allCategori, index}) => {
         <td>{subCategory}</td>
         <td>{price}</td>
         <td>{availableQuantity}</td>
-       <td> <Link to={`/toyDetails/${_id}`}><button className="btn btn-accent">View Details</button></Link></td>
+       <td> <Link to={`/toyDetails/${_id}`}><button className="btn btn-accent btn-xs">View Details</button></Link></td>
         
       </tr>
       

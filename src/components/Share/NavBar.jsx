@@ -45,14 +45,17 @@ const NavBar = () => {
           </li>
         </ul>
       </div>
-      {user? <div className="navbar-end">
+      <div data-tip={user?.displayName} className="tooltip-bottom tooltip">
+        {user ? <div className="navbar-end">
 
-        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-          <div className="w-10 text-primary rounded-full">
-            <img src={user?.photoURL} alt="no photo" />
-          </div>
-        </label>
-      </div> : " "}
+          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <div className="w-10  text-primary rounded-full ">
+
+              <img src={user?.photoURL} alt="no photo" />
+            </div>
+          </label>
+        </div> : " "}
+      </div>
     </div>
   );
 };

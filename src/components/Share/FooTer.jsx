@@ -25,7 +25,7 @@ const FooTer = () => {
   </div>
   <div>
     <span className="footer-title">Your Comments </span> 
-    <textarea name="text" id="" cols="30" rows="3"></textarea>
+    <textarea name="text" id="" cols="30" rows="1"></textarea>
     <button className="btn btn-primary">Submit</button>
   </div>
 </footer> 
