@@ -14,7 +14,7 @@ const AllToy = () => {
 const [allToys, setToys] = useState(allCategories)
 
  const handleSearch =  () => {
-  fetch(`http://localhost:5000/searchToyname/${searchText}`)
+  fetch(`https://toy-marketplace-server-murex.vercel.app/searchToyname/${searchText}`)
   .then(res => res.json())
   .then(data => setToys(data))
  }

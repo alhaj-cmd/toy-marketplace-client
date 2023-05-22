@@ -9,7 +9,7 @@ const Tabex = () => {
   const [active, setActive] = useState("Science Toys");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/toycategory/${active}`)
+    fetch(`https://toy-marketplace-server-murex.vercel.app/toycategory/${active}`)
       .then(res => res.json())
       .then(data => setCategory(data))
   }, [active])

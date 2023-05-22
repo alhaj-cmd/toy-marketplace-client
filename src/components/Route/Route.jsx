@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       {
         path:'alltoy',
         element:<AllToy></AllToy>,
-        loader: () => fetch('http://localhost:5000/allCategory')
+        loader: () => fetch('https://toy-marketplace-server-murex.vercel.app/allCategory')
       },
       {
         path:'addtoy',
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
       {
         path:'toyDetails/:id',
         element:<PrivetRoute><ToyDetails></ToyDetails></PrivetRoute>,
-        loader:({params}) => fetch(`http://localhost:5000/allCategory/${params.id}`)
+        loader:({params}) => fetch(`https://toy-marketplace-server-murex.vercel.app/allCategory/${params.id}`)
       }
     ]
   },

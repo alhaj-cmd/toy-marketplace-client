@@ -9,7 +9,7 @@ const MyToys = () => {
 
   useEffect(() => {
 
-    fetch(`http://localhost:5000/myToys/${user?.email}`)
+    fetch(`https://toy-marketplace-server-murex.vercel.app/myToys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setToyCategory(data))
   }, [user])
@@ -19,7 +19,7 @@ const MyToys = () => {
     console.log('handle delete', id)
     const proceed = confirm('Are you sure you want to delete')
     if (proceed) {
-      fetch(`http://localhost:5000/myToys/${id}`, {
+      fetch(`https://toy-marketplace-server-murex.vercel.app/myToys/${id}`, {
         method: 'DELETE'
       })
         .then(res => res.json())
@@ -36,7 +36,7 @@ const MyToys = () => {
 
   // Update
   const handleCategoryEdit = id => {
-    fetch(`http://localhost:5000/myToys/${id}`, {
+    fetch(`https://toy-marketplace-server-murex.vercel.app/myToys/${id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json'
