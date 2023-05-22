@@ -9,7 +9,7 @@ const AddToy = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = (data) => {
         // alert(JSON.stringify(data));
-        fetch("https://toy-marketplace-server-murex.vercel.app/postToy", {
+        fetch("http://localhost:5000/postToy", {
             method:"POST",
             headers:{'content-type': 'application/json'},
             body:JSON.stringify(data)
@@ -29,7 +29,6 @@ const AddToy = () => {
                     <label className='block text-gray-700 text-sm font-bold mt-3 mb-2'>Photo URL</label>
                     <input className='shadow appearance-none border rounded w-full py-2 px-3 textgray-700 leading-tight focus:outline-none focus:shadow-outline' placeholder="image link"
                         type="url"
-                        defaultValue="https://t4.ftcdn.net/jpg/03/69/30/13/240_F_369301377_m9bYnAWociiiglHRkk9tcMjgo4KT586h.jpg"
 
                         {...register("picture")}
 

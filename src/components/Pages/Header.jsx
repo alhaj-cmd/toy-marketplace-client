@@ -12,7 +12,7 @@ import Tabex from './Tabex';
 const Header = () => {
     return (
         <div className='px-2'>
-            <div className="carousel my-6 w-full">
+            <div className="carousel my-6 w-full  ">
                 <div id="slide1" className="carousel-item  relative w-full">
                     <img src={education} className=" w-full" />
                     <div className="absolute flex justify-between sm:mt-4 transform -translate-y-1/3 left-5 right-5 top-1/2">

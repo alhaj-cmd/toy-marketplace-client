@@ -7,16 +7,16 @@ const ToyDetails = () => {
     const { toyName, seller, price, subCategory, rating, picture, description, availableQuantity } = toyData;
 
     return (
-        <div>
+        <div className="bg-indigo-200">
 
             {/*  */}
-            <div className="hero min-h-screen bg-base-200 mt-6  mb-6">
+            <div className="hero min-h-screen  mt-6 mx-auto w-3/4 mb-6">
                 <div className=" flex-col p-8 lg:flex-row">
-                    <img src={picture} className=" rounded-lg shadow-2xl" />
+                    <img src={picture} className="w-full rounded-lg shadow-2xl" />
                     <div className="mt-4">
                         <h1 className="text-3xl m--2 font-bold">ToyName : {toyName}</h1>
                         <h1 className="text-2xl ">Seller : {seller}</h1>
-                        <h1 className="text-2xl ">Price : {price}</h1>
+                        <h1 className="text-2xl ">Price : ${price}</h1>
                         <h1 className="text-2xl ">subCategory: {subCategory}</h1>
                         <h1 className="text-2xl ">availableQuantity: {availableQuantity}</h1>
                         <h1 className="text-2xl ">{rating}</h1>
