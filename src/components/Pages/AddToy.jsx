@@ -1,15 +1,18 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import useTitle from "./useTitle";
 
 
 const AddToy = () => {
+    useTitle('Add a Toy');
     const { user } = useContext(AuthContext);
     console.log(user);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = (data) => {
+        // console.log(data);
         // alert(JSON.stringify(data));
-        fetch("http://localhost:5000/postToy", {
+        fetch("https://toy-marketplace-server-murex.vercel.app/postToy", {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
@@ -27,7 +30,7 @@ const AddToy = () => {
                 {errors.exampleRequired && <span className='text-red-500'>This field is required</span>}
                 <div>
                     <label className='block text-gray-700 text-sm font-bold mt-3 mb-2'>Photo URL</label>
-                    <input className='shadow appearance-none border rounded w-full py-2 px-3 textgray-700 leading-tight focus:outline-none focus:shadow-outline' name='photo url' placeholder="image link"
+                    <input className='shadow appearance-none border rounded w-full py-2 px-3 textgray-700 leading-tight focus:outline-none focus:shadow-outline' name='photo' placeholder="image link"
                         type="url"
 
                         {...register("picture")}

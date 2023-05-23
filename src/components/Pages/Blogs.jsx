@@ -1,6 +1,9 @@
 // import React from 'react';
 
+import useTitle from "./useTitle";
+
 const Blogs = () => {
+    useTitle('Blogs')
     return (
         <div className="my-12 px-12 ">
             <div className="bg-slate-300 p-12">

@@ -2,8 +2,10 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import useTitle from './useTitle';
 
 const Register = () => {
+    useTitle('Register page')
 
     const {createUser} = useContext(AuthContext);
     const handleRegister = event =>{

@@ -2,9 +2,11 @@ import { useLoaderData } from "react-router-dom";
 import AllToyTabs from "./AllToyTabs";
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import useTitle from "./useTitle";
 
 
 const AllToy = () => {
+  useTitle('All Toy');
 
   const [searchText, setSearchText] = useState('')
 

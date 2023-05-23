@@ -7,11 +7,13 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../Firebase/Firebase.config';
 import toast from 'react-hot-toast';
+import useTitle from './useTitle';
 
 
 
 
 const Login = () => {
+  useTitle('Login');
 
   const auth = getAuth(app);
   const Googleprovider = new GoogleAuthProvider();
