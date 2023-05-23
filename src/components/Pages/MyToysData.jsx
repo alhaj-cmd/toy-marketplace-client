@@ -2,7 +2,7 @@
 
 import { Link } from "react-router-dom";
 
-const MyToysData = ({category, index, handleDelete, handleCategoryEdit}) => {
+const MyToysData = ({category, index, handleDelete, }) => {
     const {name, _id, subCategory, price, quantity} = category;
     return (
       
@@ -13,8 +13,8 @@ const MyToysData = ({category, index, handleDelete, handleCategoryEdit}) => {
             <td>{price}</td>
             <td>{quantity}</td>
             <td>
-                {/* {status === 'confirm' ? <Link>Update</Link> : <button onClick={() => handleCategoryEdit(_id)}  className="btn btn-success">Edit</button>} */}
-                <Link to={`/edit/${category._id}`}><button onClick={() => handleCategoryEdit(_id)}  className="btn btn-success">Edit</button></Link>
+            {/* edit button */}
+                <Link to={`/edit/${category._id}`}><button className="btn btn-success">Edit</button></Link>
                
             </td>
             <td>

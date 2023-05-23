@@ -1,6 +1,6 @@
 
 import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/login/pic.avif'
 import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
@@ -17,6 +17,11 @@ const Login = () => {
   const Googleprovider = new GoogleAuthProvider();
 
   const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
+  console.log(from);
   const handleLogin = event => {
     event.preventDefault();
     const form = event.target;
@@ -30,6 +35,7 @@ const Login = () => {
         console.log(user);
         toast.success('congratulations')
         form.reset();
+        navigate(from, { replace: true });
 
       })
       .catch(error => console.log(error));

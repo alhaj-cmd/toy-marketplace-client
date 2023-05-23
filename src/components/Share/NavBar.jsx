@@ -25,7 +25,7 @@ const NavBar = () => {
 
 
         </div>
-        <a className="btn btn-ghost normal-case text-xl"><img className="h-10" src="logo.jpg" alt="" /></a>
+        <a className="btn btn-ghost normal-case text-xl"><img className="h-8"  src="/logo.jpg" alt="No Picture" /></a>
         <a className="text-violet-700">SCIENCE KITS</a>
       </div>
       <div className="navbar-center hidden lg:flex">

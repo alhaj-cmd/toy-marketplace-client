@@ -30,8 +30,8 @@ const FooTer = () => {
   </div>
 </footer> 
 <footer className="footer px-10 py-4 border-t bg-indigo-200 text-base-content border-base-300">
-  <div className="items-center grid-flow-col">
-    <img className="h-10  w-10" src="logo.jpg" alt="" />
+  <div className="items-center grid-flow-col bg-gradient-to-r from-sky-500 to-indigo-500 p-2">
+    <img className="h-10  w-12" src="/logo.jpg" alt="" />
     <p><span className="text-primary-focus">SCIENCE KITS</span> <br/>Providing reliable tech since 1990</p>
   </div> 
   <div className="md:place-self-center md:justify-self-end">
