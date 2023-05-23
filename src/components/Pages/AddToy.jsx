@@ -27,14 +27,14 @@ const AddToy = () => {
                 {errors.exampleRequired && <span className='text-red-500'>This field is required</span>}
                 <div>
                     <label className='block text-gray-700 text-sm font-bold mt-3 mb-2'>Photo URL</label>
-                    <input className='shadow appearance-none border rounded w-full py-2 px-3 textgray-700 leading-tight focus:outline-none focus:shadow-outline' defaultValue='photo url' placeholder="image link"
+                    <input className='shadow appearance-none border rounded w-full py-2 px-3 textgray-700 leading-tight focus:outline-none focus:shadow-outline' name='photo url' placeholder="image link"
                         type="url"
 
                         {...register("picture")}
 
                     />
                     <label className='block text-gray-700 text-sm font-bold mt-3 mb-2'>Name</label>
-                    <input className='shadow appearance-none border rounded w-full py-2 px-3 textgray-700 leading-tight focus:outline-none focus:shadow-outline' defaultValue='name' type="text" placeholder='Type Your Name'
+                    <input className='shadow appearance-none border rounded w-full py-2 px-3 textgray-700 leading-tight focus:outline-none focus:shadow-outline' name='name' type="text" placeholder='Type Your Name'
                         {...register("name")}
 
                     />
@@ -68,23 +68,23 @@ const AddToy = () => {
 
 
                     <label className='block text-gray-700 text-sm font-bold mt-3 mb-2'>Price</label>
-                    <input className='shadow appearance-none border rounded w-full py-2 px-3 textgray-700 leading-tight focus:outline-none focus:shadow-outline' defaultValue='price' type="text" placeholder='price'
+                    <input className='shadow appearance-none border rounded w-full py-2 px-3 textgray-700 leading-tight focus:outline-none focus:shadow-outline' name='price' type="text" placeholder='price'
                         {...register("price")}
 
                     />
                     <label className='block text-gray-700 text-sm font-bold mt-3 mb-2'>Rating</label>
-                    <input className='shadow appearance-none border rounded w-full py-2 px-3 textgray-700 leading-tight focus:outline-none focus:shadow-outline' defaultValue='rating' type="text" placeholder='rating'
+                    <input className='shadow appearance-none border rounded w-full py-2 px-3 textgray-700 leading-tight focus:outline-none focus:shadow-outline' name='rating' type="text" placeholder='rating'
                         {...register("rating")}
 
                     />
 
                     <label className='block text-gray-700 text-sm font-bold mt-3 mb-2'>Availabe Quantity</label>
-                    <input className='shadow appearance-none border rounded w-full py-2 px-3 textgray-700 leading-tight focus:outline-none focus:shadow-outline' type="text" defaultValue='quantity' placeholder='Quantity'
+                    <input className='shadow appearance-none border rounded w-full py-2 px-3 textgray-700 leading-tight focus:outline-none focus:shadow-outline' type="text" name='quantity' placeholder='Quantity'
                         {...register("quantity")}
 
                     />
                     <label className='block text-gray-700 text-sm font-bold mt-3 mb-2'>Details Description</label>
-                    <textarea className='shadow appearance-none border rounded w-full py-2 px-3 textgray-700 leading-tight focus:outline-none focus:shadow-outline' type="textArea" defaultValue='description' placeholder='Description'
+                    <textarea className='shadow appearance-none border rounded w-full py-2 px-3 textgray-700 leading-tight focus:outline-none focus:shadow-outline' type="textArea" name='description' placeholder='Description'
                         {...register("description")}
 
                     />
